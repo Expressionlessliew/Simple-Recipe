@@ -1,0 +1,68 @@
+{
+  "questions": [
+    {
+      "name": "How many keys are there in a piano?",
+      "answer": "88"
+    },
+    {
+      "name": "How many keys does a keyboard have?",
+      "answer": "104"
+    },
+    {
+      "name": "How many function keys are there in a keyboard",
+      "answer": "12"
+    },
+    {
+      "name": "How many days are there in a year?",
+      "answer": "365"
+    },
+    {
+      "name": "How many days are there in a week?",
+      "answer": "7"
+    },
+    {
+      "name": "How many days are there in a month?",
+      "answer": "30"
+    },
+    {
+      "name": "How many weeks are there in a month?",
+      "answer": "4"
+    },
+    {
+      "name": "How many weeks are there in a year?",
+      "answer": "52"
+    },
+    {
+      "name": "how many alphabets are there?",
+      "answer": "26"
+    },
+    {
+      "name": "How many vowel are there?",
+      "answer": "5"
+    },
+    {
+      "name": "how many consonants are there in english alphabet?",
+      "answer": "21"
+    }
+  ],
+  "recipe": [
+    {
+      "name": "smooth pancake",
+      "desc": "eggs mix in batter...... ",
+      "Time": "20 minutes",
+      "img": "assets/pancakes.jpg"
+    },
+    {
+      "name": "toast avacado",
+      "desc": "bake the bread then spread the avacado on it...... ",
+      "Time": "25 minutes",
+      "img": "assets/toast avacado.jpg"
+    },
+    {
+      "name": "blueberry smoothie cereal",
+      "desc": "make the blueberries into ...... ",
+      "Time": "18 minutes",
+      "img": "assets/blueberry smoothie cereal.jpg"
+    }
+  ]
+}
