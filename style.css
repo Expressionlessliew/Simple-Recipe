@@ -1,35 +1,27 @@
 /* Styles for the recipe container */
 .breakfast-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    overflow-x: auto;
-  }
-  
-  .breakfast-container > div {
-    flex-basis: calc(33.33% - 20px); /* Set the width of each recipe to one-third minus spacing */
-    margin: 10px;
-    min-width: 0;
-    min-height: 0;
-  }
-  
-  /* Styles for each recipe element */
-  .breakfastrecipe-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    background-color: #fff;
-  }
-  
-  /* Styles for recipe images (adjust as needed) */
-  .breakfastrecipe-container img {
-    width: 100px; /* Adjust the width as needed */
-    height: auto;
-    border-radius: 4px;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Styles for each recipe element */
+.breakfastrecipe-container {
+  align-items: center;
+  width: calc(
+    33.33% - 20px
+  ); /* Set the width of each recipe to one-third minus spacing */
+  margin-bottom: 20px; /* Add spacing between recipe elements */
+  padding: 20px; /* Add padding to create the box-like appearance */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow for the box effect */
+  border-radius: 8px; /* Add rounded corners for a more pleasant look */
+  background-color: #fff; /* Set a background color for the recipe box */
+}
+
+/* Styles for recipe images (adjust as needed) */
+.breakfastrecipe-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px; /* Add rounded corners for the recipe image */
+}

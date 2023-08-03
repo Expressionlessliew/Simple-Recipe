@@ -19,15 +19,17 @@ function displayRecipes(recipes) {
     const recipeTime = document.createElement("p");
     recipeTime.textContent = "Time: " + recipe.Time;
 
-    const recipeImage = document.createElement("img");
-    recipeImage.src = recipe.img;
-    recipeImage.alt = recipe.name;
+    if (recipe.img && typeof recipe.img === "string") {
+      const recipeImage = document.createElement("img");
+      recipeImage.src = recipe.img;
+      recipeImage.alt = recipe.name;
+      recipeContainer.appendChild(recipeImage);
+    }
 
-    // Append the elements to the container
+    // Append the other elements to the container
     recipeContainer.appendChild(recipeName);
     recipeContainer.appendChild(recipeDesc);
     recipeContainer.appendChild(recipeTime);
-    // recipeContainer.appendChild(recipeImage);
 
     // Append the container to the breakfast container
     breakfastContainer.appendChild(recipeContainer);
