@@ -63,6 +63,24 @@
       "desc": "make the blueberries into ...... ",
       "Time": "18 minutes",
       "img": "assets/blueberry smoothie cereal.jpg"
+    },
+    {
+      "name": "burger",
+      "desc": "bake the bread then place sauces ...... ",
+      "Time": "25 minutes",
+      "img": "assets/burger.jpg"
+    },
+    {
+      "name": "Thai rice",
+      "desc": "Steam the rice then give ...... ",
+      "Time": "27 minutes",
+      "img": "assets/Thai rice.jpg"
+    },
+    {
+      "name": "Chinese noodles",
+      "desc": "cook the noodles till soft ...... ",
+      "Time": "20 minutes",
+      "img": "assets/Chinese noodle.jpg"
     }
   ]
 }
