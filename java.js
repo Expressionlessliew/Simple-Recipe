@@ -1,6 +1,7 @@
 const database = firebase.database();
 const recipeRef = database.ref("recipe");
 
+
 // Function to display the recipes
 function displayRecipes(recipes) {
   const breakfastContainer = document.getElementById("breakfast-container");
@@ -19,6 +20,13 @@ function displayRecipes(recipes) {
     const recipeTime = document.createElement("p");
     recipeTime.textContent = "Time: " + recipe.Time;
 
+    const recipetype = document.createElement("p");
+    recipetype.textContent = "Type: " + recipe.type;
+
+    const recipelink = document.createElement("a");
+    recipelink.textContent = "Link for this recipe: " + recipe.link;
+
+
     if (recipe.img && typeof recipe.img === "string") {
       const recipeImage = document.createElement("img");
       recipeImage.src = recipe.img;
@@ -30,6 +38,9 @@ function displayRecipes(recipes) {
     recipeContainer.appendChild(recipeName);
     recipeContainer.appendChild(recipeDesc);
     recipeContainer.appendChild(recipeTime);
+    recipeContainer.appendChild(recipetype);
+    recipeContainer.appendChild(recipelink);
+
 
     // Append the container to the breakfast container
     breakfastContainer.appendChild(recipeContainer);

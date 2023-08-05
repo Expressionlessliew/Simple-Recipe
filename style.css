@@ -15,21 +15,35 @@
 
 /* Styles for each recipe element */
 .breakfastrecipe-container {
+  margin-left: 10px;
   float: left;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: calc(33.33% - 20px);
-  margin-bottom: 10px; /* Add a small margin at the bottom to create spacing between rows */
+  height: 680px; /* Fixed height for consistent box sizes */
+  margin-bottom: 10px;
   padding: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   background-color: #fff;
 }
 
+/* Reset margin for heading and paragraphs inside recipe container */
+.breakfastrecipe-container h2,
+.breakfastrecipe-container p {
+  margin: 0;
+}
+
 /* Styles for recipe images */
 .breakfastrecipe-container img {
-  width: 100%; /* Adjust the width as needed */
+  width: 100%;
   height: auto;
   border-radius: 4px;
+}
+
+.recipe{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 50px;
+  text-align: center;
 }
