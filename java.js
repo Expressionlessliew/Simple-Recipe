@@ -24,7 +24,7 @@ function displayRecipes(recipes) {
     recipetype.textContent = "Type: " + recipe.type;
 
     const recipelink = document.createElement("a");
-    recipelink.textContent = "Link for this recipe: " + recipe.link;
+    recipelink.textContent = recipe.link;
 
 
     if (recipe.img && typeof recipe.img === "string") {
