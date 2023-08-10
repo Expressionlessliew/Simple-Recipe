@@ -1,56 +1,49 @@
 const database = firebase.database();
 const recipeRef = database.ref("recipe");
+const searchBtn = document.getElementById("searchbtn");
+const breakfastContainer = document.getElementById("breakfast-container");
+
+searchBtn.addEventListener("click", getMeal);
+
+function getMeal() {
+  //clear the old data here
+  breakfastContainer.innerHTML = "";
+
+  let usersearch = document.getElementById("search").value.trim();
+  //api call
+  fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${usersearch}`) //calling the back end here
+    .then((response) => response.json()) //parse res into json
+    .then((data) => {
+      if (data.meals) {
+        console.log(data);
+        data.meals.forEach((recipe) => {
+          const recipeContainer = document.createElement("div");
+          recipeContainer.classList.add("breakfastrecipe-container");
+
+          const recipeName = document.createElement("h2");
+          recipeName.textContent = recipe.strMeal;
+
+          const recipeDesc = document.createElement("p");
+          recipeDesc.textContent = recipe.strMealThumb;
 
 
-// Function to display the recipes
-function displayRecipes(recipes) {
-  const breakfastContainer = document.getElementById("breakfast-container");
+          if (recipe.strMealThumb && typeof recipe.strMealThumb === "string") {
+            const recipeImage = document.createElement("img");
+            recipeImage.src = recipe.strMealThumb;
+            recipeImage.alt = recipe.strMeal;
+            recipeContainer.appendChild(recipeImage);
+          }
+
+          // Append the other elements to the container
+          recipeContainer.appendChild(recipeName);
+          // Append the container to the breakfast container
+          breakfastContainer.appendChild(recipeContainer);
+        });
+      } else {
+        console.log("error");
+      }
+    });
 
   // Loop through each recipe and create elements to display them
-  recipes.forEach((recipe) => {
-    const recipeContainer = document.createElement("div");
-    recipeContainer.classList.add("breakfastrecipe-container");
-
-    const recipeName = document.createElement("h2");
-    recipeName.textContent = recipe.name;
-
-    const recipeDesc = document.createElement("p");
-    recipeDesc.textContent = recipe.desc;
-
-    const recipeTime = document.createElement("p");
-    recipeTime.textContent = "Time: " + recipe.Time;
-
-    const recipetype = document.createElement("p");
-    recipetype.textContent = "Type: " + recipe.type;
-
-    const recipelink = document.createElement("a");
-    recipelink.textContent = recipe.link;
-
-
-    if (recipe.img && typeof recipe.img === "string") {
-      const recipeImage = document.createElement("img");
-      recipeImage.src = recipe.img;
-      recipeImage.alt = recipe.name;
-      recipeContainer.appendChild(recipeImage);
-    }
-
-    // Append the other elements to the container
-    recipeContainer.appendChild(recipeName);
-    recipeContainer.appendChild(recipeDesc);
-    recipeContainer.appendChild(recipeTime);
-    recipeContainer.appendChild(recipetype);
-    recipeContainer.appendChild(recipelink);
-
-
-    // Append the container to the breakfast container
-    breakfastContainer.appendChild(recipeContainer);
-  });
 }
 
-// Fetch the recipe data from the Realtime Database
-recipeRef.once("value", (snapshot) => {
-  const recipesData = snapshot.val();
-  if (recipesData && Array.isArray(recipesData)) {
-    displayRecipes(recipesData);
-  }
-});
